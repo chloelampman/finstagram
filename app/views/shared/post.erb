@@ -1,0 +1,45 @@
+<!--this is a partial, shared html code-->
+
+<article class="finstagram-post">
+  <div class="user-info">
+    <img src="<%= post.user.avatar_url %>" alt="<%=post.user.username %>">
+    <h2><%= post.user.username %></h2>
+    <h3><%= post.humanized_time_ago %></h3>
+  </div>
+  <a class="photo" href="posts/<%=post.id%>">
+    <img src="<%= post.photo_url %>" alt="mishtagram post from <%= post.user.username %>">
+  </a>
+  <div class="actions">
+    <%= erb(:"shared/likes", {locals: {post: post}})%>
+    
+    
+    <%= post.like_count %>
+    <%if post.like_count == 1%>
+        like
+    <%else%>
+        likes
+    <%end%>
+    <span class="comment-count">
+        <%= post.comment_count %>
+        <%if post.comment_count == 1%>
+            comment
+        <%else%>
+            comments
+        <%end%>
+    </span>
+  </div>
+  
+  <ul class="comments">
+    <% post.comments.each do |comment| %>
+      <li>
+        <p>
+          <%= comment.user.username %>: <%= comment.text %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <!--partial for adding new comment, only for logged in user-->
+  <% if current_user%>
+    <%= erb(:"shared/new_comment", { locals: { post: post }}) %>
+  <% end%>
+</article>

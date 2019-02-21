@@ -1,0 +1,43 @@
+
+<h4>Fill out all fields to create your Mishtagram profile.</h4>     
+<!--if user has already tried to fill form incorrectly then user object will have associated errors-->
+<ul class="errors">
+    <% @user.errors.full_messages.each do |message|%>
+        <li><%= message%></li>
+    <% end%>    
+</ul>
+
+<!-- POST denotes the type of HTTP request-->
+<!-- action tells the form to submit the data to the signup URL-->
+<form method = "POST" action = "/signup">
+    
+    <div class = "form-group">
+    <!-- for attribute links label to id attribute in input tag -->
+    <label for="email">Email</label>
+    <!-- name attribute is the name that will hold the input value when sent to Sinatra server-->
+    <!-- value will be populated if user object already has that attribute, ie they already tried to fill the form and are now fixing errors-->
+    <input type = "email" id="email" name="email" value="<%=@user.email%>" >
+    </div>
+    
+    <div class = "form-group">
+    <label for = "avatar_url">Avatar URL</label>
+    <input type = "text" id = "avatar_url" name="avatar_url" value="<%=@user.avatar_url%>">
+    </div>
+    
+    <div class = "form-group">
+    <label for = "username">Username</label>
+    <input type = "text" id = "username" name="username" value="<%=@user.username%>">
+    </div>
+    
+    <div class = "form-group">
+    <!--password input type obscures the text -->
+    <label for="password">Password</label>
+    <input type = "password" id="password" name="password" value="<%=@user.password%>">
+    </div>
+    
+    <div class = "form-group">
+    <!--button is the tag type to submit the form-->
+    <button class="button" type = "submit">Signup for Mishtagram!</button>
+    </div>
+    
+</form>

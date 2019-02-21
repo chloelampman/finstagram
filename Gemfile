@@ -10,9 +10,14 @@ gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
+gem 'pry'
 
 group :development, :test do
-  gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end

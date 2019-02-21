@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,700italic,700,300">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/lib.css">
+        <link rel="stylesheet" href="/stylesheets/app.css">
+    </head>
+    <body>
+        <header>
+            <div id="left-header">
+                <h1><a href = "\">Mishstagram</a></h1>
+                <%if current_user%>
+                <h4>
+                    <%=current_user.username%>
+                    <a href="\logout">Log Out</a>
+                </h4>
+                <%else%>
+                    <h4><a href = "\login">Log In</a></h4>
+                <%end%>
+            </div>
+            <div id= "right-header">
+                <h3><a href = "\about">About</a><br>
+                <%if not current_user%><a href = "\signup">Sign Up</a></h3><%end%>
+            </div>
+        </header>
+        <!-- tells sinatra this is where page content goes  -->
+        <main>
+             <%= yield%>
+        </main>
+    </body>
+</html>

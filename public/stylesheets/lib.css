@@ -28,7 +28,10 @@ input[type=text], input[type=password], input[type=email] {
 header {
   overflow: hidden;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 header > .login-info {
@@ -66,7 +69,7 @@ main {
 
 .user-info {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .user-info img {
@@ -88,11 +91,12 @@ main {
 .photo img {
   display: block;
   width: 100%;
+  border-radius: 2%;
 }
 
 .actions {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .actions button.user-like {

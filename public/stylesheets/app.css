@@ -1,0 +1,63 @@
+header { 
+    background-color: #244751;
+    color:#E8FDFF;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Oxygen', sans-serif;
+}
+
+main {
+    background-color: white;
+    padding: 16px;
+}
+
+.finstagram-post{
+    margin-bottom: 48px;
+}
+
+.finstagram-post .user-info img {
+    border-radius: 50%;
+    position: relative;
+}
+
+.like {
+    padding-right: 10px;
+    
+}
+
+.like img {
+    bottom: -10px;
+}
+/*tag a, class photo, and state hover (mouse hovering)*/
+a.photo:hover {
+    padding: 5px;
+    transition: padding 0.5s;
+}
+
+#left-header h4 {
+    margin-top: 0;
+    font-weight: 500
+}
+
+#left-header h1 {
+    margin-bottom: 0;
+}
+
+#post-form input {
+    width: 90%;
+}
+
+#post-form #caption {
+    height: 100px;
+}
+
+button#like-button {
+    border: none;
+    background-color: white;
+}
+
+img#like {
+    width: 25px;
+}

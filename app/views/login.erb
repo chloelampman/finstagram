@@ -1,0 +1,22 @@
+<!--if login was unsuccesfull, display error message -->
+    <%= @error_message if @error_message%>
+    
+<form method = "POST" action = "/login">
+    
+    <div class = "form-group">
+    <label for = "username">Username</label>
+    <input type = "text" id = "username" name="username">
+    </div>
+    
+    <div class = "form-group">
+    <!--password input type obscures the text -->
+    <label for="password">Password</label>
+    <input type = "password" id="password" name="password">
+    </div>
+    
+    <div class = "form-group">
+    <!--button is the tag type to submit the form-->
+    <button class="button" type = "submit">Log In</button>
+    </div>
+    
+</form>
